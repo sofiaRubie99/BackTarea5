@@ -1,24 +1,13 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "API backend for authors and publishers.",
-  "main": "handler.js",
   "scripts": {
-    "start": "node server.js",
-    "deploy": "serverless deploy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "netlify dev"
   },
-  "keywords": ["authors", "publishers", "API"],
-  "author": "Sofia Rubie",
-  "license": "MIT",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.21.1",
-    "mongodb": "^6.10.0",
-    "mongoose": "^8.7.2",
-    "serverless-http": "^3.0.0"
-  },
-  "devDependencies": {
-    "serverless": "^3.30.0"
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0",
+    "mongoose": "^5.10.9",
+    "cors": "^2.8.5"
   }
 }

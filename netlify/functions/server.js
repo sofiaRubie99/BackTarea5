@@ -1,8 +1,8 @@
 const express = require('express');
-const cors = require('./headerCORS');
-const mongoose = require('./mongoDB');  // Importamos la conexión ya realizada en mongoDB.js
-const Author = require('./models/author');
-const Publisher = require('./models/publisher');
+const cors = require('../../headerCORS');
+const mongoose = require('../../mongoDB');  // Importamos la conexión ya realizada en mongoDB.js
+const Author = require('../../models/author');
+const Publisher = require('../../models/publisher');
 const serverless = require('serverless-http');
 
 // Configurar Express
@@ -136,12 +136,5 @@ app.delete('/publishers/:id', async (req, res) => {
   }
 });
 
-// Agregar la escucha del servidor
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(3000, () => {
-    console.log('Servidor corriendo en http://localhost:3000');
-  });
-}
-
-// Exportar el manejador de Lambda (solo si estás usando un entorno serverless)
+// Exportar como función sin servidor (serverless function)
 module.exports.handler = serverless(app);
